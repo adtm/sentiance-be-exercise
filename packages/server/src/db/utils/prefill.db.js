@@ -1,5 +1,6 @@
-// const axios = require('axios')
 const { get } = require("../../api/dataset.api");
+
+const AppError = require("../../utils/AppError/AppError");
 
 const MomentHistory = require("../../user/momentHistory/momentHistory.schema");
 const EventHistory = require("../../user/eventHistory/eventHistory.schema");
@@ -10,20 +11,13 @@ const prefillDatabase = async () => {
     const { data } = await get();
     const { moment_history, event_history, segments } = data.user;
 
-    console.log(moment_history.length);
-    console.log(event_history.length);
-    console.log(segments.length);
-
-    try {
-      await MomentHistory.insertMany(moment_history);
-      await EventHistory.insertMany(event_history);
-      await Segment.insertMany(segments);
-      console.log("inserted all!");
-    } catch (err) {
-      console.log(err);
-    }
+    await Promise.all([
+      MomentHistory.insertMany(moment_history),
+      EventHistory.insertMany(event_history),
+      Segment.insertMany(segments),
+    ]);
   } catch (err) {
-    console.log(err);
+    throw new AppError("Couldn't prefill database" + err);
   }
 };
 

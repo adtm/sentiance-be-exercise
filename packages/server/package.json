@@ -2,16 +2,17 @@
   "name": "sentiance-server",
   "version": "0.0.1",
   "description": "BE Server",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
   },
   "author": "Tomas Eglinskas",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
     "dotenv": "^6.2.0",
+    "joi": "^14.3.1",
     "koa": "^2.6.2",
     "koa-logger": "^3.2.0",
     "koa-router": "^7.4.0",

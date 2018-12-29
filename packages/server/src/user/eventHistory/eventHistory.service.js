@@ -11,6 +11,7 @@ const getAllTransportModeDurations = eventHistories =>
 const getAllModeDistance = (mode, eventHistories) =>
   eventHistories.reduce((totalDistance, eventHistory) => {
     if (eventHistory.mode === mode) totalDistance += eventHistory.distance;
+
     return totalDistance;
   }, 0);
 
