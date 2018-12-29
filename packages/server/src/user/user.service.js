@@ -1,10 +1,11 @@
-const { DEFAULT_MODE } = require("./user.const");
+const { CAR_MODE } = require("./user.const");
 
 const { getEventHistoriesByRange } = require("./eventHistory/eventHistory.repo");
 const { getMomentHistoriesByRange } = require("./momentHistory/momentHistory.repo");
 
 const {
   getAllModeDistance,
+  getAllTransportModeAmounts,
   getAllTransportModeDurations,
 } = require("./eventHistory/eventHistory.service");
 
@@ -18,15 +19,15 @@ const getTimeline = async ({ start, end }) => {
     ]);
 
     const eventHistoriesWithDuration = eventHistories.map(addDuration);
-    const transportModeDurations = getAllTransportModeDurations(eventHistoriesWithDuration);
-
     return {
       momentHistories: momentHistories.map(addDuration),
       eventHistories: eventHistoriesWithDuration,
       aggregated: {
-        transportModeDurations,
-        uniqueTransportModes: Object.keys(transportModeDurations).length,
-        distanceByCar: getAllModeDistance(DEFAULT_MODE, eventHistoriesWithDuration),
+        transportMode: {
+          duration: getAllTransportModeDurations(eventHistoriesWithDuration),
+          amount: getAllTransportModeAmounts(eventHistoriesWithDuration),
+        },
+        carDistance: getAllModeDistance(CAR_MODE, eventHistoriesWithDuration),
       },
     };
   } catch (err) {

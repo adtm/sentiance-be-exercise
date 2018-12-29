@@ -1,1 +1,1 @@
-exports.DEFAULT_MODE = "car";
+exports.CAR_MODE = "car";
