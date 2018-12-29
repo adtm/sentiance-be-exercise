@@ -1,1 +1,1 @@
-exports.URL = "localhost:8080";
+exports.URL = "http://localhost:8080";
