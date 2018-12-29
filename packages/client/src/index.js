@@ -2,9 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "antd/dist/antd.css";
 
-
 import App from "./App";
-import * as serviceWorker from "./utils/serviceWorker";
+import * as serviceWorker from "./utils/serviceWorkerWorker";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
