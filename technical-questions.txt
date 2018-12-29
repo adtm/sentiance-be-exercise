@@ -1,0 +1,80 @@
+
+# 1
+- Question
+Provide up to 3 links to examples of product developer documentation pages that inspire you and explain in a few words why you think they are worth mentioning.
+
+1. https://nodejs.org/dist/latest-v10.x/docs/api/
+2. https://ramdajs.com/docs/#
+3. https://reactjs.org/docs/getting-started.html
+
+I have preference for documentation which are easy enought to find what you want - and not sit too much. 
+For example I have always quite the trouble with Mongoose's documentation, thus I just use StackOverflow.
+
+Reacts documentation is good because it's also welcoming for newcommers and has many various patterns.
+
+
+# 2 
+- Question
+Given the following dataset and query:
+Data: The geographical location of 1 million users, updated roughly every half hour;
+Every record has a userid, time, place name, address, latitude, longitude, location accuracy in meters and previous location.
+
+Query: find all users currently within 150m radius of a location N, which has a latitude and longitude.
+
+Explain what would be an efficient way to store the data and how you would query it. 
+Make sure to name a database system that would handle the storage and explain why you selected it
+
+- Answer
+I would look to Google S2, which provides the availability to disperse longitude / latitude coordinates by cells in a maps 
+spherical representation - where each cell has a uniqueId. By drawing the circle range it would be able 
+to get all cell id's of a range and get all the ranges data.
+
+
+# 3 
+- Question
+NodeJS is known to be single-threaded. 
+Given a multi-core machine with 4 cores, how would you deploy a NodeJS server such that it makes maximal use of machine resources.
+
+- Answer
+Use the Cluster API and use all available cores.
+
+
+# 4
+- Question
+How would you go about troubleshooting a slow HTTP request?
+Assume the request does nothing more than read from a Postgres database, transform that data and send it back
+
+- Answer
+1. Monitor CPU usage
+2. Use a Debugger and Profile the code
+3. Have propper logging
+
+
+# 5 
+- Question
+List out the different ways of writing an asynchronous function in NodeJS and why you prefer one over the other.
+All LTS versions of Node are valid for this answer.
+
+- Answer
+Callbacks / Promises / Await. Preference to Await, then Promises.
+Await is used mostly because it is the cleanest represenation. 
+
+
+# 6
+- Question
+Provide 1 advantage and 1 disadvantage when using GraphQL vs REST
+
+- Answer
+Advantage: can take only a part of date, f.e { a: 1, b: 2, c: 3 } it can takeout only a if the FE schema 
+asks for it
+Disadvantage: from experience I know difficulties with caching / authorization / authentication
+
+
+# 7
+- Question
+Pick your preferred format for time out of this list, explain why you prefer this format.
+
+- Answer
+My preference is for ISO because they are most human readable. (5)
+Al though I have worked most of my time with plain timestamps (7) and like the simple conventions to other formats,
+but preference is for (5) for readability. 
