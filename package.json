@@ -1,0 +1,20 @@
+{
+  "name": "sentiance-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "lerna run start",
+    "install": "lerna bootstrap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adtm/sentiance-exercise.git"
+  },
+  "dependencies": {
+    "lerna": ""
+  },
+  "keywords": [],
+  "author": "Tomas Eglinskas",
+  "license": "ISC"
+}
