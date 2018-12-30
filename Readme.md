@@ -16,6 +16,7 @@
 
 1. `.env` comitted cause nothing confidential (PORT)
 2. `db` admin + password commited for `MLab DB` in `db.const.js` - also nothing confidential (will delete these credentials after a week)
+3. In the `BE` duration, amounts are processed seperate - this may add some minor time, but in this way the is a seperation of concern (SRP), and the complexicity still stays O(n)
 
 ## Short Description
 
