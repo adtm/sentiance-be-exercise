@@ -29,6 +29,7 @@ I would look to Google S2, which provides the availability to disperse longitude
 spherical representation - where each cell has a uniqueId. By drawing the circle range it would be able 
 to get all cell id's of a range and get all the ranges data.
 
+I would choose MongoDB and if there is a lot of data, look how I can partition the dataset.
 
 # 3 
 - Question
